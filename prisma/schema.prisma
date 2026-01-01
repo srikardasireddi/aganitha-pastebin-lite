@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  // DO NOT put 'url' here. The config file handles it now.
+}
+
+model Paste {
+  id         String    @id
+  content    String
+  view_count Int       @default(0)
+  max_views  Int?
+  expires_at DateTime?
+  created_at DateTime  @default(now())
+}
