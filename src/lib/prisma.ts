@@ -1,7 +1,7 @@
 import { Pool } from 'pg';
 import { PrismaPg } from '@prisma/adapter-pg';
 // Adjust the path below to match where your 'npx prisma generate' put the files
-import { PrismaClient } from '@prisma-client';
+import { PrismaClient } from '../generated/prisma/client';
 const globalForPrisma = global as unknown as { prisma: PrismaClient };
 
 // 1. Create a connection pool using your URL
